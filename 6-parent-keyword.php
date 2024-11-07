@@ -4,23 +4,26 @@
 
 class Father
 {
-    public function print100()
+    public $num1 = 100;
+    public $num2 = 200;
+
+    function addTwo()
     {
-        for ($i = 0; $i <= 100; $i++) {
-            echo $i . PHP_EOL;
-        }
+        return $this->num1 + $this->num2;
     }
+
 }
 
 
 class Son extends Father
 {
-    public function demo()
+    function mulTwo()
     {
-        parent::print100();
+        $dad = parent::addTwo();
+        echo $dad * 30;
     }
 }
 
 
 $objSon = new Son();
-echo $objSon->print100();
+echo $objSon->mulTwo();
